@@ -1,0 +1,156 @@
+/* General reset for body */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f2f4f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Background image with opacity */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: url('feed.jpg') no-repeat center center fixed;
+    background-size: cover;
+    opacity: 0.5;  /* Set opacity of the background image */
+    z-index: -1;   /* Ensure it stays behind the content */
+}
+
+
+/* Container for feedback form */
+.feedback-container {
+    background: #ffffff;
+    padding: 45px 35px;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+}
+
+/* Title of the page */
+h1 {
+    margin-bottom: 20px;
+    color: #000000;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+/* Form input fields */
+input[type="text"], input[type="email"], input[type="number"], textarea {
+    width: 100%;
+    padding: 14px 18px;
+    margin: 12px 0;
+    border: 1px solid #dcdcdc;
+    border-radius: 10px;
+    font-size: 16px;
+    background: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="number"]:focus, textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background: #ffffff;
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
+}
+
+/* Rating input field */
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Textarea for feedback message */
+textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+/* Submit button styling */
+button {
+    padding: 14px 18px;
+    background-color: #3b82f6;
+    color: white;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #2563eb;
+    transform: translateY(-3px); /* Slight lift effect */
+}
+
+/* Success message after form submission */
+.submitMsg {
+    margin-top: 20px;
+    color: #4caf50;
+    font-weight: 500;
+}
+
+/* Back to Dashboard button */
+.back-to-dashboard-btn {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.back-to-dashboard-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Home button styling */
+/* Home button styling */
+.home-btn {
+    position: absolute; /* Position the button in the top-left corner */
+    top: 20px;
+    left: 20px;
+    padding: 12px 20px;
+    background-color: #28a745; /* Green color for the Home button */
+    color: white;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: auto; /* Ensures button does not stretch */
+    white-space: nowrap; /* Prevents text from wrapping to next line */
+}
+
+.home-btn:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: translateY(-3px); /* Slight lift effect */
+}
+
+.home-btn:focus {
+    outline: none;
+}
+
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    .feedback-container {
+        width: 90%;
+    }
+}
