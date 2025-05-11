@@ -1,0 +1,1 @@
+DBMS Web App is a simple PHP-based app for SMIT students to manage databases. 🎓 It allows users to add, update, and delete records, execute SQL queries, and review database contents. 🔄 With secure user and admin logins, it provides full control over the database management tasks. 🔐📊
