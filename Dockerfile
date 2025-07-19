@@ -1,14 +1,19 @@
-# Use the official PHP image from Docker Hub
+# Use the official PHP image with Apache and Debian base
 FROM php:8.1-cli
 
-# Set working directory inside container
+# Install mysqli extension and dependencies
+RUN apt-get update && \
+    apt-get install -y libpng-dev libonig-dev libxml2-dev zip unzip && \
+    docker-php-ext-install mysqli
+
+# Set working directory
 WORKDIR /usr/src/app
 
-# Copy all files from repo into container
+# Copy project files into container
 COPY . .
 
-# Expose port (Render uses 10000)
+# Expose port for Render (required)
 EXPOSE 10000
 
-# Start the PHP built-in server
+# Start PHP built-in server
 CMD ["php", "-S", "0.0.0.0:10000"]
